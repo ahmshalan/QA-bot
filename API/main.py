@@ -19,6 +19,9 @@ if torch.cuda.is_available():
 else:
     model = torch.load('model.h5', map_location=torch.device('cpu'))
 
+tokenizer = AutoTokenizer.from_pretrained('distilroberta-base')
+
+
 
 @app.get("/")
 def read_root():
@@ -27,7 +30,6 @@ def read_root():
 
 @app.get("/predict")
 def predict(question: str):
-    tokenizer = AutoTokenizer.from_pretrained('distilroberta-base')
     text, link = retreieve_context(question)
     inputs = tokenizer(question, text, max_length=512,
                        return_tensors="pt", truncation=True, padding='max_length')
