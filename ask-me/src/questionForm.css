@@ -1,0 +1,40 @@
+.content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.robot {
+  width: 320px;
+  height: 320px;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  width: 100%;
+}
+
+.search-button {
+  margin-top: 15px !important;
+  background-color: #64f3d5 !important;
+  color: white !important;
+  width: 100px !important;
+  height: 50px !important;
+  font-size: 16px !important;
+}
+
+.search-button:disabled {
+  background-color: #666666 !important;
+}
+
+.snipper {
+  position: absolute;
+  /* color: #64f3d5 !important; */
+  width: 102px !important;
+  height: 102px !important;
+}
+
+.blur {
+  filter: blur(3px);
+}
